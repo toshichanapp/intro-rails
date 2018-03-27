@@ -1,0 +1,17 @@
+<h1>ブログ一覧</h1>
+
+<p><%= notice %></p>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th></th>
+  </tr>
+
+<%=  render @blogs %>
+
+</table>
+
+<br>
+
+<%= link_to '新しくブログを投稿する', new_blog_path %>

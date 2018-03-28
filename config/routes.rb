@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'blogs#index'
+  root to: 'tweets#index'
   resources :contacts
   resources :blogs do
     collection do

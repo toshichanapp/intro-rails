@@ -1,11 +1,25 @@
-<%= form_with(model: @tweet, url: tweets_path, local: true) do |form| %>
-  <%= form.hidden_field :content %>
-
-  <p>本文:<%= @tweet.content %></p>
-  <%= form.submit  "登録する" %>
-<% end %>
-
-<%= form_with(model: @tweet, url: new_tweet_path, local: true, method: 'get') do |form| %>
-  <%= form.hidden_field :content %>
-  <%= form.submit "もどる", name: 'back' %>
-<% end %>
+<div class="box">
+  <article class="post">
+    <div class="media">
+      <div class="media-left"></div>
+      <div class="media-content">
+        <div class="content">
+          <%= form_with(model: @tweet, url: tweets_path, local: true) do |form| %>
+            <%= form.hidden_field :content %>
+            <h4>本文:<%= @tweet.content %></h4>
+            <%= form.submit "登録する", class: "level-item button is-primary" %>
+          <% end %>
+          <nav class="level is-mobile">
+            <div class="level-left">
+              <%= form_with(model: @tweet, url: new_tweet_path, local: true, method: 'get') do |form| %>
+                <%= form.hidden_field :content %>
+                <%= form.submit "もどる", name: 'back', class:"level-item button is-link"%>
+              <% end %>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="media-right"></div>
+    </div>
+  </article>
+</div>

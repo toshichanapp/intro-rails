@@ -1,6 +1,20 @@
-<tr>
-  <td><%= tweet.content %></td>
-  <td><%= link_to '詳細を確認する', tweet_path(tweet.id) %></td>
-  <td><%= link_to 'tweetを編集する', edit_tweet_path(tweet.id) %></td>
-  <td><%= link_to 'tweetを削除する', tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
-</tr>
+<div class="box">
+  <article class="post">
+    <div class="media">
+      <div class="media-left"></div>
+      <div class="media-content">
+        <div class="content">
+          <h4><%= tweet.content %></h4>
+          <nav class="level is-mobile">
+            <div class="level-left">
+              <%= link_to '詳細', tweet_path(tweet.id), class: "level-item button is-link"%>
+              <%= link_to '編集', edit_tweet_path(tweet.id), class:"level-item button is-link" %>
+              <%= link_to '削除', tweet_path(tweet.id), method: :delete, class:"level-item button is-danger", data: { confirm: '本当に削除していいですか？' } %>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="media-right"></div>
+    </div>
+  </article>
+</div>

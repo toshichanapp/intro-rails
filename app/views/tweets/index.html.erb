@@ -1,17 +1,16 @@
-<h1>Tweet一覧</h1>
-
-<p><%= notice %></p>
-
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th></th>
-  </tr>
-
-<%=  render @tweets %>
-
-</table>
-
-<br>
-
-<%= link_to '新しくTweetを投稿する', new_tweet_path %>
+<section class="container">
+  <div class="columns">
+    <div class="column is-3">
+      <%= link_to 'New Tweet', new_tweet_path, class: "button is-primary is-block is-alt is-large" %>
+    </div>
+    <div class="column is-9">
+      <div class="box content">
+        <div class="notification is-info">
+          <p><%= notice %></p>
+        </div>
+        <h1>Tweet一覧</h1>
+        <%=  render @tweets %>
+      </div>
+    </div>
+  </div>
+</section>

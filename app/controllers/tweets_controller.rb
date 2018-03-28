@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.all.order(:id)
   end
 
   def show; end

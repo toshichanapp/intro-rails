@@ -8,16 +8,20 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="bg-info">
     <header>
-      <nav class="navbar is-link"></nav>
+      <nav class="navbar is-link">
+         <p>PHASE3 bootstrapで作成するアプリケーション</p>
+      </nav>
+      <%= image_tag "3872.jpg" %>
+      <p>この画像は<a href="https://jp.freepik.com/free-photo/_1284119.htm">Freepikによるデザイン</a></p>
     </header>
     <%= yield %>
     <footer class="footer">
       <div class="container">
         <div class="content has-text-centered">
           <p>
-            PHASE2大課題で作成するアプリケーション
+            PHASE3大課題で作成するアプリケーション
           </p>
         </div>
       </div>

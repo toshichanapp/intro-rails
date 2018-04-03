@@ -7,8 +7,8 @@
           <h4><%= tweet.content %></h4>
           <nav class="level is-mobile">
             <div class="level-left">
-              <%= link_to '編集', edit_tweet_path(tweet.id), class:"level-item button is-link" %>
-              <%= link_to '削除', tweet_path(tweet.id), method: :delete, class:"level-item button is-danger", data: { confirm: '本当に削除していいですか？' } %>
+              <%= link_to '編集', edit_tweet_path(tweet.id), class:"btn btn-primary" %>
+              <%= link_to '削除', tweet_path(tweet.id), method: :delete, class:"btn btn-danger", data: { confirm: '本当に削除していいですか？' } %>
             </div>
           </nav>
         </div>

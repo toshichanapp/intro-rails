@@ -13,10 +13,21 @@
       <nav class="navbar is-link">
          <p>PHASE3 bootstrapで作成するアプリケーション</p>
       </nav>
-      <%= image_tag "3872.jpg" %>
-      <p>この画像は<a href="https://jp.freepik.com/free-photo/_1284119.htm">Freepikによるデザイン</a></p>
+      <% if logged_in? %>
+        <%= link_to "Profile", user_path(current_user.id) %>
+        <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+      <% else %>
+        <%= link_to "Sign up", new_user_path %>
+        <%= link_to "Login", new_session_path %>
+      <% end %>
     </header>
+
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+
     <%= yield %>
+
     <footer class="footer">
       <div class="container">
         <div class="content has-text-centered">

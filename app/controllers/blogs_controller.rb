@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
 
+  before_action :redirect_non_login_user, only: %i[show new edit]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   def index

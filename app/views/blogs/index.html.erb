@@ -1,17 +1,16 @@
-<h1>ブログ一覧</h1>
-
-<p><%= notice %></p>
-
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th></th>
-  </tr>
-
-<%=  render @blogs %>
-
-</table>
-
-<br>
-
-<%= link_to '新しくブログを投稿する', new_blog_path %>
+<section class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= link_to 'New Blog', new_blog_path, class: "btn btn-primary" %>
+    </div>
+    <div class="col-md-9">
+      <div class="box content">
+        <div class="notification is-info">
+          <p><%= notice %></p>
+        </div>
+        <h1>ブログ一覧</h1>
+        <%= render @blogs %>
+      </div>
+    </div>
+  </div>
+</section>

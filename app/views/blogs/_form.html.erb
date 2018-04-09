@@ -19,6 +19,7 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
+  <%= form.hidden_field :user_id, value: current_user.id%>
   <%= form.submit %>
 <% end %>
 

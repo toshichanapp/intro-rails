@@ -9,8 +9,10 @@
           <nav class="level is-mobile">
             <div class="level-left">
               <%= link_to '詳細を確認する', blog_path(blog.id), class:"btn btn-primary" %>
-              <%= link_to '編集', edit_blog_path(blog.id), class:"btn btn-primary" %>
-              <%= link_to '削除', blog_path(blog.id), method: :delete, class:"btn btn-danger", data: { confirm: '本当に削除していいですか？' } %>
+              <% if blog.user == current_user %>
+                <%= link_to '編集', edit_blog_path(blog.id), class:"btn btn-primary" %>
+                <%= link_to '削除', blog_path(blog.id), method: :delete, class:"btn btn-danger", data: { confirm: '本当に削除していいですか？' } %>
+              <% end %>
             </div>
           </nav>
         </div>

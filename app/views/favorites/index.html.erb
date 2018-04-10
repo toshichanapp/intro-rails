@@ -1,0 +1,16 @@
+<section class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= link_to 'New Blog', new_blog_path, class: "btn btn-primary" %>
+    </div>
+    <div class="col-md-9">
+      <div class="box content">
+        <div class="notification is-info">
+          <p><%= notice %></p>
+        </div>
+        <h1>お気に入り一覧</h1>
+        <%= render @favorites %>
+      </div>
+    </div>
+  </div>
+</section>

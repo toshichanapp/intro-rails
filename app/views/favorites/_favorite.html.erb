@@ -1,0 +1,19 @@
+<div class="box">
+  <article class="post">
+    <div class="media">
+      <div class="media-left"></div>
+      <div class="media-content">
+        <div class="content">
+          <h3><%= favorite.blog.title %></h3>
+          <h4><%= favorite.blog.content %></h4>
+          <nav class="level is-mobile">
+            <div class="level-left">
+              <%= link_to '詳細を確認する', blog_path(favorite.blog.id), class:"btn btn-primary" %>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="media-right"></div>
+    </div>
+  </article>
+</div>

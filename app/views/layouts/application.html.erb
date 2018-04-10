@@ -9,13 +9,21 @@
   </head>
 
   <body class="bg-info">
+    <div class = "container"></div>
     <header>
       <nav class="navbar is-link">
          <p>PHASE3 bootstrapで作成するアプリケーション</p>
       </nav>
       <% if logged_in? %>
-        <%= link_to "Profile", user_path(current_user.id) %>
-        <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+        <div class ="row">
+          <span class = "col-3"><%= link_to 'Blogs', blogs_path, class: "btn btn-primary" %></span>
+          <span class = "col-3"><%= link_to 'My Favorites', favorites_path, class: "btn btn-primary" %></span>
+          <span class = "col-3"><%= link_to "Profile", user_path(current_user.id), class: "btn btn-primary"%></span>
+          <span class = "col-3"><%= link_to "Logout", session_path(current_user.id), class: "btn btn-primary", method: :delete %></span>
+        </div>
+
+
+
       <% else %>
         <%= link_to "Sign up", new_user_path %>
         <%= link_to "Login", new_session_path %>

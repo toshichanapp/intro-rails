@@ -19,6 +19,11 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
+  <div class="blog_title">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :blog_image %>
+  </div>
+  <%= form.hidden_field :image_cache %>
   <%= form.hidden_field :user_id, value: current_user.id%>
   <%= form.submit %>
 <% end %>

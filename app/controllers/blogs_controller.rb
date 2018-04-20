@@ -26,7 +26,7 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-
+    @blog.image.retrieve_from_cache! params[:blog][:image]
     if @blog.save
       BlogMailer.create_mail(@blog).deliver
       redirect_to blogs_path, notice: "ブログを作成しました！"
@@ -53,7 +53,7 @@ class BlogsController < ApplicationController
   private
 
   def blog_params
-    params.require(:blog).permit(:user_id, :title, :content)
+    params.require(:blog).permit(:user_id, :title, :content, :image)
   end
 
   def set_blog

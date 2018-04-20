@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+  mount_uploader :icon, IconUploader
+
   has_many :blogs
   has_many :favorites
 

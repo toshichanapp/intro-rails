@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
   root to: 'blogs#index'
   resources :users
   resources :sessions, only: %i[new create destroy]
@@ -14,8 +15,4 @@ Rails.application.routes.draw do
     end
   end
   resources :favorites, only: [:index, :create, :destroy]
-
-  if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  end
 end

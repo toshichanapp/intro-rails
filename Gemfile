@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem "bulma-rails", "~> 0.6.2"
 gem 'bcrypt', '3.1.11'
+gem 'letter_opener_web'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -57,7 +58,6 @@ group :development do
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-byebug'
-  gem 'letter_opener_web'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

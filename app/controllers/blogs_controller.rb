@@ -26,7 +26,9 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-    @blog.image.retrieve_from_cache! params[:blog][:image]
+    if params[:blog][:image].present?
+      @blog.image.retrieve_from_cache! params[:blog][:image]
+    end
     if @blog.save
       BlogMailer.create_mail(@blog).deliver
       redirect_to blogs_path, notice: "ブログを作成しました！"

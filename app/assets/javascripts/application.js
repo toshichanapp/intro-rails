@@ -13,5 +13,9 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery/dist/jquery.js
+//= require jquery-ui/ui/widget
+//= require jquery-ui/ui/widgets/sortable
 //= require bootstrap/dist/js/bootstrap.min
 //= require_tree .
+
+$('#sortable').sortable();

@@ -9,7 +9,10 @@
           <p><%= notice %></p>
         </div>
         <h1>ブログ一覧</h1>
-        <%= render @blogs %>
+        <div id="sortable">
+          <%= render @blogs %>
+        </div>
+
       </div>
     </div>
   </div>

@@ -16,6 +16,7 @@
       </nav>
       <% if logged_in? %>
         <div class ="row">
+          <%= link_to 'ユーザー一覧', users_path %>
           <span class = "col-3"><%= link_to 'Blogs', blogs_path, class: "btn btn-primary" %></span>
           <span class = "col-3"><%= link_to 'My Favorites', favorites_path, class: "btn btn-primary" %></span>
           <span class = "col-3"><%= link_to "Profile", user_path(current_user.id), class: "btn btn-primary"%></span>
